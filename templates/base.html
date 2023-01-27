@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- o bloco a baixo carrega os arquivo de stylo personalizados para pagina -->
+    {% block style %}{% endblock %}
+    <!-- o bloco a baixo carrega o titulo da aba da pagina -->
+    <title>{% block page_title %}{% endblock %}</title>
+</head>
+<body>
+    {% include "partials/_header.html" %}
+    <!-- o bloco a baixo carrega o conteudo da pagina  conteudo dinamico-->
+    {% block content %}  
+
+    {% endblock %}
+
+    <!-- Footer -->
+    {% include "partials/_footer.html" %}
+    <!-- End of Footer -->
+</body>
+</html>

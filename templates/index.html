@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+<!-- Carrega os arquivos estaticos -->
+{% load static %}
+
+<!-- pode carregar daqui para a base o estilo personalizado -->
+{% block style %}{% endblock %}
+
+<!-- leva o nome da pagina personalizado para a base -->
+{% block page_title %}Home{% endblock %}
+
+<!-- Inicio do bloco de conteúdo -->
+{% block content %}
+
+<!-- bloco de header e navegação -->
+{% include "partials/_navbar.html" %}
+   
+<h3>Eu sou o conteúdo principal</h3>
+<h1>Pagina Inicial</h1>
+    <p>Deu tudo Certo</p>
+{% endblock %}
