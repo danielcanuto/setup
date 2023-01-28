@@ -1,25 +1,44 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- o bloco a baixo carrega os arquivo de stylo personalizados para pagina -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+    
     {% block style %}{% endblock %}
     <!-- o bloco a baixo carrega o titulo da aba da pagina -->
-    <title>{% block page_title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
+    
 </head>
+
 <body>
-    {% include "partials/_header.html" %}
-    <!-- o bloco a baixo carrega o conteudo da pagina  conteudo dinamico-->
-    {% block content %}  
+    <!-- caso queira deixar margens laterais no header colocar  -->
+    <div>
+        {% block header %}
+            {% include "partials/_header.html" %}
+        {% endblock %}
+    </div>
+    <div class="container">
+        <h1 class="featurette-heading fw-normal lh-1">{% block page_title %}  {% endblock %}</h1>
+        <!-- o bloco a baixo carrega o conteudo da pagina  conteudo dinamico-->
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
+    </div>
 
-    <!-- Footer -->
-    {% include "partials/_footer.html" %}
     <!-- End of Footer -->
+    <div class="container">
+        
+        {% block footer %}
+            {% include "partials/_footer.html" %}
+        {% endblock %}
+    </div>
+    <script type="text/javascript"src="{% static 'js/bootstrap.bundle.js' %}"></script>
 </body>
+
 </html>
