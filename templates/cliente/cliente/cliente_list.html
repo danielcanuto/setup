@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+<!-- Carrega os arquivos estaticos -->
+{% load static %}
+
+<!-- pode carregar daqui para a base o estilo personalizado -->
+{% block style %}{% endblock %}
+{% block title %}Lista CLientes{% endblock %}
+
+
+<!-- leva o nome da pagina personalizado para a base -->
+{% block page_title %} Clientes {% endblock %}
+
+
+<!-- Inicio do bloco de conteúdo -->
+{% block content %}
+    
+<hr>
+<div class="table-responsive"> 
+<table class="table table-striped">
+	<tr>
+    	<th>Nome</th>
+      <th>Telefone</th>
+      <th>email</th>
+  		<th>opções</th>
+	</tr>
+	{% for item in object_list %}
+			<tr>
+				<td>{{ item }}</td>
+        <td>{{ item.telefone }}</td>
+        <td>{{ item.email }}</td>
+				<td>
+					<a href="{% url 'delete_cliente' item.pk %}" class="btn btn-danger btn-sm" title="Apagar"><img src="{% static 'img/icons/box/trash-white.svg' %}" alt=""> Apagar </a>
+					<a href="{% url 'update_cliente' item.pk %}" class="btn btn-success btn-sm" title="Alterar"> <img src="{% static 'img/icons/box/recycle-white.svg' %}" alt=""> Atualizar </a>
+					<a href="{% url 'create_cliente' %}" class="btn btn-primary btn-sm" title="Adicionar"><img src="{% static 'img/icons/box/plus-lg-white.svg' %}" alt="">Adicionar</a>
+			
+			</td>
+			</tr>
+			
+		{% empty %}
+			<tr>
+				<td colspan="3">Não há registros na TABELA</td>
+			</tr>
+	{% endfor %}
+
+</table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+<!-- Carrega os arquivos estaticos -->
+{% load static %}
+
+<!-- pode carregar daqui para a base o estilo personalizado -->
+{% block style %}{% endblock %}
+{% block title %}Pessoas{% endblock %}
+
+
+<!-- leva o nome da pagina personalizado para a base -->
+{% block page_title %}  Lista Cadastro de Pessoas{% endblock %}
+
+
+<!-- Inicio do bloco de conteúdo -->
+{% block content %}
+<hr>
+<div class="table-responsive"> 
+<table class="table table-striped">
+	<tr>
+    	<th>Nome</th>
+		<th>opções</th>
+	</tr>
+	{% for item in object_list %}
+			<tr>
+				<td>{{ item.name }}</td>
+				<td>
+					<a href="{% url 'delete_person' item.pk %}" class="btn btn-danger btn-sm" title="Apagar">Apagar 🗑</a>
+					<a href="{% url 'update_person' item.pk %}" class="btn btn-success btn-sm" title="Alterar"> Atualizar ♻</a>
+					<a href="{% url 'create_person' %}" class="btn btn-primary btn-sm" title="Adicionar">Adicionar ➕</a>
+			
+			</td>
+			</tr>
+			
+		{% empty %}
+			<tr>
+				<td colspan="3">Não há registros na TABELA</td>
+			</tr>
+	{% endfor %}
+
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+<!-- Carrega os arquivos estaticos -->
+{% load static %}
+
+<!-- pode carregar daqui para a base o estilo personalizado -->
+{% block style %}{% endblock %}
+{% block title %}Cadastro{% endblock %}
+
+
+<!-- leva o nome da pagina personalizado para a base -->
+{% block page_title %} Cadastro{% endblock %}
+
+<!-- Inicio do bloco de conteúdo -->
+{% block content %}
+<hr>
+<form action="" mothod="POST">
+    {% csrf_token %}
+    
+
+
+</form>
+<hr>
+<form action=""method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+  
+
+{% endblock %}

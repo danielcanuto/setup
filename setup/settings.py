@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-oshy(f7js&y#9^lua8x6sg$3g6a9dw7*vdc1$ko!6uqku(hkqs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # importação de apps
+    'cpf_field',
     # meus apps
     'home.apps.HomeConfig',
+    'cliente.apps.ClienteConfig',
+    'cidade_uf.apps.CidadeUfConfig',
 
 ]
 
