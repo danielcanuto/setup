@@ -1,3 +1,8 @@
 pip install django-cpf
 
 python -m pip install Pillow
+
+
+Tipos de campos: https://docs.djangoproject.com/pt-br/...
+
+Propriedades dos campos: https://docs.djangoproject.com/pt-br/...

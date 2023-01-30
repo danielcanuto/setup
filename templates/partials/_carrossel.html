@@ -1,3 +1,4 @@
+{% load static %}
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
@@ -5,28 +6,42 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
     </div>
 
-    <div class="carousel-inner">
+    <div class="carousel-inner mb-3">
         <div class="carousel-item active">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+            <img src="{% static 'img/folder.png' %}" width="100%" alt="">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> -->
             <div class="container">
                 <div class="carousel-caption text-start">
-                    <h1>Titulo 01</h1>
-                    <p> pequeno texto para ver onde vai aparecer 01</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">meu link 01</a></p>
+                    <h1>Pastas funcionais</h1>
+                    <p> Garantia de direitos e transparências nas ações trabalhistas</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Saíba mais ...</a></p>
                 </div>
             </div>
         </div>
 
         <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+            <img src="{% static 'img/pla.png' %}" width="100%" alt="">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> -->
             <div class="container">
                 <div class="carousel-caption text-start">
-                    <h1>Titulo 02</h1>
+                    <h1>Arquivista e a TI</h1>
                     <p> pequeno texto para ver onde vai aparecer 02</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">meu link 02</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Saíba mais ...</a></p>
                 </div>
             </div>
       </div>
+
+      <div class="carousel-item">
+        <img src="{% static 'img/digi.png' %}" width="100%" alt="">
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg> -->
+        <div class="container">
+            <div class="carousel-caption text-start">
+                <h1>Titulo 03</h1>
+                <p> pequeno texto para ver onde vai aparecer 02</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Saíba mais ...</a></p>
+            </div>
+        </div>
+  </div>
       
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">

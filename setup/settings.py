@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # importação de apps
     'cpf_field',
+    'crispy_forms',
     # meus apps
     'home.apps.HomeConfig',
     'cliente.apps.ClienteConfig',
     'cidade_uf.apps.CidadeUfConfig',
+    'usuario.apps.UsuarioConfig',
 
 ]
 
@@ -120,6 +122,11 @@ USE_I18N = True
 USE_TZ = True
 
 
+
+# CRISP_FORMS
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -138,3 +145,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR,"media")
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configurações de autenticação
+
+LOGIN_REDIRECT_URL = "list_cliente"
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = "/login/"

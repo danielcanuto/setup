@@ -6,12 +6,16 @@ from django.urls import reverse_lazy
 
 from cliente.models import Person, Cliente
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class PersonListView(ListView):
+class PersonListView(LoginRequiredMixin, ListView):
+    login_url = reverse_lazy('login')
     model= Person
     template_name = "cliente/person/person_list.html"
 
-class PersonCreateView(CreateView):
+class PersonCreateView(LoginRequiredMixin, CreateView):
+    login_url = reverse_lazy('login')
     model = Person
     fields = [
         'name',
@@ -26,7 +30,8 @@ class PersonCreateView(CreateView):
     success_url = "/cliente/list_person"
 
 
-class PersonUpdateView(UpdateView):
+class PersonUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = reverse_lazy('login')
     model = Person
     fields = [
         'name',
@@ -40,17 +45,20 @@ class PersonUpdateView(UpdateView):
     template_name = "cliente/form.html"
     success_url = "/cliente/list_person"
 
-class PersonDeleteView(DeleteView):
+class PersonDeleteView(LoginRequiredMixin, DeleteView):
+    login_url = reverse_lazy('login')
     model = Person
     success_url = reverse_lazy('list_person')
 
 
 
-class ClienteListView(ListView):
+class ClienteListView(LoginRequiredMixin, ListView):
+    login_url = reverse_lazy('login')
     model= Cliente
     template_name = "cliente/cliente/cliente_list.html"
 
-class ClienteCreateView(CreateView):
+class ClienteCreateView(LoginRequiredMixin, CreateView):
+    login_url = reverse_lazy('login')
     model = Cliente
     fields = [
         'person',
@@ -66,7 +74,8 @@ class ClienteCreateView(CreateView):
     template_name = "cliente/form.html"
     success_url = "/cliente/list_cliente"
 
-class ClienteUpdateView(UpdateView):
+class ClienteUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = reverse_lazy('login')
     model = Cliente
     fields = [
         'person',
@@ -82,7 +91,8 @@ class ClienteUpdateView(UpdateView):
     template_name = "cliente/form.html"
     success_url = "/cliente/list_cliente"
 
-class ClienteDeleteView(DeleteView):
+class ClienteDeleteView(LoginRequiredMixin, DeleteView):
+    login_url = reverse_lazy('login')
     model = Cliente
     success_url = reverse_lazy('list_cliente')
 

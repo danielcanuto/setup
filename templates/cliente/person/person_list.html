@@ -14,6 +14,7 @@
 
 <!-- Inicio do bloco de conteúdo -->
 {% block content %}
+<a href="{% url 'create_person' %}" class="btn btn-primary btn-sm" title="Adicionar"><img src="{% static 'img/icons/box/plus-lg-white.svg' %}"> Adicionar </a>
 <hr>
 <div class="table-responsive"> 
 <table class="table table-striped">
@@ -25,10 +26,9 @@
 			<tr>
 				<td>{{ item.name }}</td>
 				<td>
-					<a href="{% url 'delete_person' item.pk %}" class="btn btn-danger btn-sm" title="Apagar">Apagar 🗑</a>
-					<a href="{% url 'update_person' item.pk %}" class="btn btn-success btn-sm" title="Alterar"> Atualizar ♻</a>
-					<a href="{% url 'create_person' %}" class="btn btn-primary btn-sm" title="Adicionar">Adicionar ➕</a>
-			
+					<a href="{% url 'delete_person' item.pk %}" class="btn btn-danger btn-sm" title="Apagar"><img src="{% static 'img/icons/box/trash-white.svg' %}">Apagar </a>
+					<a href="{% url 'update_person' item.pk %}" class="btn btn-success btn-sm" title="Alterar"><img src="{% static 'img/icons/box/recycle-white.svg' %}" alt=""> Atualizar</a>
+								
 			</td>
 			</tr>
 			

@@ -1,22 +1,15 @@
 {% load static %}
-<header>
-    <div class="px-3 py-2 text-bg-dark">
-      <div class="container">
-        
+
+<div class="px-3 py-2 text-bg-dark">
+    <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="{% url 'index' %}" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                 <img src="{% static 'img/icons/logo/logo-branco.svg' %}" width="75"  alt="Logo da Empresa">
             </a>
-
             {% include "partials/_nav_header.html" %}
         </div>
-      </div>
     </div>
+</div>
 
-    <div class="px-3 py-2 border-bottom mb-3">
-      <div class="container d-flex flex-wrap justify-content-center">
-        {% include "partials/_pesquisatopo.html" %}
-        {% include "partials/_botao_login.html" %}
-      </div>
-    </div>
-  </header>
+
+    

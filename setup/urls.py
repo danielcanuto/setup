@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from home import urls as home_urls
 from cliente import urls as cliente_urls
+from usuario import urls as usuario_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cliente/', include(cliente_urls)),
+    path('', include(usuario_urls)),
     path('', include(home_urls)),
 ]
