@@ -20,21 +20,21 @@
 <table class="table table-striped">
 	<tr>
     	<th>Nome</th>
-      <th>Telefone</th>
-      <th>email</th>
-  		<th>opções</th>
+    	<th>Telefone</th>
+    	<th>E-mail</th>
+  		<th>Opções</th>
 	</tr>
 	{% for item in object_list %}
 			<tr>
 				<td>{{ item }}</td>
-        <td>{{ item.telefone }}</td>
-        <td>{{ item.email }}</td>
+        		<td>{{ item.telefone }}</td>
+        		<td>{{ item.email }}</td>
 				<td>
 					<a href="{% url 'delete_cliente' item.pk %}" class="btn btn-danger btn-sm" title="Apagar"><img src="{% static 'img/icons/box/trash-white.svg' %}" alt=""> Apagar </a>
 					<a href="{% url 'update_cliente' item.pk %}" class="btn btn-success btn-sm" title="Alterar"> <img src="{% static 'img/icons/box/recycle-white.svg' %}" alt=""> Atualizar </a>
 					
 			
-			</td>
+				</td>
 			</tr>
 			
 		{% empty %}

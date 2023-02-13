@@ -60,16 +60,7 @@ class ClienteListView(LoginRequiredMixin, ListView):
 class ClienteCreateView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('login')
     model = Cliente
-    fields = [
-        'person',
-        'telefone',
-        'email',
-        'cidade_estado',
-        'endereco',
-        'numero',
-        'bairro',
-        'cep'
-    ]
+    fields = "__all__"
 
     template_name = "cliente/form.html"
     success_url = "/cliente/list_cliente"
@@ -77,16 +68,7 @@ class ClienteCreateView(LoginRequiredMixin, CreateView):
 class ClienteUpdateView(LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
     model = Cliente
-    fields = [
-        'person',
-        'telefone',
-        'email',
-        'cidade_estado',
-        'endereco',
-        'numero',
-        'bairro',
-        'cep'
-    ]
+    fields = "__all__"
 
     template_name = "cliente/form.html"
     success_url = "/cliente/list_cliente"

@@ -14,14 +14,8 @@
 <!-- Inicio do bloco de conteúdo -->
 {% block content %}
 
-<form action="" mothod="POST">
-    {% csrf_token %}
-    
-
-
-</form>
 <hr>
-<form action=""method="POST">
+<form action="" method="POST">
     {% csrf_token %}
     <p> Você tem certeza que deseja apagar o registro de <strong> "{{ object }}"</strong>? </p>     
     <button type="submit" class="btn btn-danger">Excluir</button>

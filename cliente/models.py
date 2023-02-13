@@ -29,8 +29,7 @@ class Person(models.Model):
         return name[0]
 
 
-class Cliente(models.Model):
-    person = models.ForeignKey(Person, on_delete= models.CASCADE, blank=True, null=True, verbose_name='Nome')
+class Cliente(Person):
     telefone = models.CharField('Telefone',max_length=31, blank=True, null=True)
     email = models.CharField('E-mail', max_length=50)
     cidade_estado = models.ForeignKey(CidadeUF, on_delete=models.CASCADE, blank=True, null=True, verbose_name="Cidade/UF")
@@ -40,4 +39,4 @@ class Cliente(models.Model):
     cep =models.CharField('CEP', max_length=9)
 
     def __str__(self):
-        return f'{self.person} - {self.telefone}'
+        return f'{self.name} - {self.telefone}'
